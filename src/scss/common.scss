@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "~@angular/material" as mat;
+
+$mydemo-success: mat.define-palette(mat.$green-palette, 500, 200, 800);
+$mydemo-info: mat.define-palette(mat.$amber-palette);
+
+@function apply-extra-colors($theme) {
+  @return map.deep-merge(
+    $theme,
+    (
+      success: $mydemo-success,
+      info: $mydemo-info,
+      color: (
+        success: $mydemo-success,
+        info: $mydemo-info,
+      ),
+    )
+  );
+}
+
+@mixin create-theme($theme) {
+  @include mat.all-component-themes($theme);
+}

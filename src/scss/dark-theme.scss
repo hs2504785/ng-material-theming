@@ -1,0 +1,26 @@
+@use "~@angular/material" as mat;
+@use "./common.scss";
+
+$dark-primary: mat.define-palette(mat.$pink-palette);
+$dark-accent: mat.define-palette(mat.$blue-gray-palette);
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+    ),
+  )
+);
+
+$dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+    ),
+  )
+);
+
+$dark-theme: common.apply-extra-colors($dark-theme);
+
+@include common.create-theme($dark-theme);

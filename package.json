@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prod:build": "ng build --base-href \"/mydemo/\"",
+    "deploy": "npm run prod:build && ngh --dir=dist/mydemo --message=\"My First deploy\""
   },
   "private": true,
   "dependencies": {

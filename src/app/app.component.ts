@@ -21,7 +21,7 @@ export class AppComponent {
     this.renderer.setAttribute(
       this.themeElm,
       'href',
-      `/${event.target.value}-theme.css`
+      `${event.target.value}-theme.css`
     );
   }
 }

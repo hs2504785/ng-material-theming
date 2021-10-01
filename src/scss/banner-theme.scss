@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "~@angular/material" as mat;
+
+@mixin app-banner-theme($theme) {
+  $theme-colors: mat.get-color-config($theme);
+  $success-color-palette: map-get($theme, success);
+  $info-color-palette: map-get($theme, info);
+  $warn-color-palette: map-get($theme, warn);
+
+  app-banner {
+    display: block;
+    background-color: mat.get-color-from-palette($success-color-palette, card);
+
+    &.app-banner-success {
+      background-color: mat.get-color-from-palette(
+        $success-color-palette,
+        lighter
+      );
+    }
+    &.app-banner-info {
+      background-color: mat.get-color-from-palette(
+        $info-color-palette,
+        lighter
+      );
+    }
+    &.app-banner-warn {
+      background-color: mat.get-color-from-palette(
+        $warn-color-palette,
+        lighter
+      );
+    }
+  }
+}
